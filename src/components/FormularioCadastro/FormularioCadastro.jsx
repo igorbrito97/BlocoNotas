@@ -17,7 +17,6 @@ export default class FormularioCadastro extends React.Component {
 
   _criarNota(evento) {
     evento.preventDefault();
-    console.log(this.state);
     this.props.criarNota(this.state.titulo, this.state.nota);
     this.setState({
       titulo: "",

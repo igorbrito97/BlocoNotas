@@ -11,11 +11,14 @@ export default class ListaNotas extends React.Component {
     return (
       <ul className="lista-notas">
         {this.props.notas.map((item, index) => {
-          console.log("itemzao");
-          console.log(item);
           return (
             <li className="lista-notas_item" key={index}>
-              <CardNota titulo={item.titulo} nota={item.texto} />
+              <CardNota
+                index={index}
+                titulo={item.titulo}
+                nota={item.texto}
+                deletarNota={this.props.deletarNota}
+              />
             </li>
           );
         })}
