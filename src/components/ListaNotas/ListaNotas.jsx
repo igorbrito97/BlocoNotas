@@ -18,6 +18,7 @@ export default class ListaNotas extends React.Component {
                 titulo={item.titulo}
                 nota={item.texto}
                 deletarNota={this.props.deletarNota}
+                categoria={item.categoria}
               />
             </li>
           );

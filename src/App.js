@@ -14,8 +14,8 @@ class App extends React.Component {
     };
   }
 
-  criarNota(titulo, texto) {
-    const novaNota = { titulo, texto };
+  criarNota(titulo, texto, categoria) {
+    const novaNota = { titulo, texto, categoria };
     let arr = [...this.state.notas, novaNota];
     this.setState({
       notas: arr,
@@ -31,7 +31,6 @@ class App extends React.Component {
   }
 
   criarCategoria(texto) {
-    console.log("clickCriarrrApp");
     let arr = [...this.state.categorias, { cat: texto }];
     this.setState({ categorias: arr });
   }
@@ -40,7 +39,10 @@ class App extends React.Component {
     console.log(this.state);
     return (
       <section className="conteudo">
-        <FormularioCadastro criarNota={this.criarNota.bind(this)} />
+        <FormularioCadastro
+          categorias={this.state.categorias}
+          criarNota={this.criarNota.bind(this)}
+        />
         <main className="conteudo-principal">
           <ListaCategorias
             categorias={this.state.categorias}

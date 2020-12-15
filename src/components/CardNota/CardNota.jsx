@@ -20,6 +20,7 @@ class CardNota extends Component {
               this.props.deletarNota(this.props.index);
             }}
           />
+          <h4>{this.props.categoria}</h4>
         </header>
         <p className="card-nota_texto">{this.props.nota}</p>
       </section>
